@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:maaz_class/models/constants.dart';
@@ -120,9 +121,14 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: TextButton(
-                    onPressed: () {},
-                    child: Row(mainAxisSize: MainAxisSize.min,
-                      children:  [
+                    onPressed: () {
+                      if (kDebugMode) {
+                        print("google works");
+                      }
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
                         Image.asset("assets/Google.png"),
                         SizedBox(width: 10.w),
                         const Text("Google"),
@@ -132,7 +138,8 @@ class HomeScreen extends StatelessWidget {
                       side: MaterialStateProperty.all(
                         const BorderSide(color: kBorderColor),
                       ),
-                      foregroundColor: MaterialStateProperty.all(kDarkTextColor),
+                      foregroundColor:
+                          MaterialStateProperty.all(kDarkTextColor),
                       padding: MaterialStateProperty.all(
                         EdgeInsets.symmetric(
                           vertical: 14.h,
@@ -147,7 +154,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 16.h,),
+                SizedBox(
+                  height: 16.h,
+                ),
                 Wrap(
                   children: [
                     Text(

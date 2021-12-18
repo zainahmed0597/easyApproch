@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/HomeScreen.dart';
+import 'package:maaz_class/screens/Login_Register_Screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
             textTheme: GoogleFonts.nunitoTextTheme(
               Theme.of(context).textTheme,
             )),
-        home: const HomeScreen(),
+        home:  const LoginScreen(),
 
         debugShowCheckedModeBanner: false,
       ),designSize: const Size(360, 640),
