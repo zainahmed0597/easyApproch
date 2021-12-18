@@ -9,13 +9,13 @@ class RegisterScreen extends StatefulWidget {
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
 class _RegisterScreenState extends State<RegisterScreen> {
-  int press = 1;
-
-  void pressed() {
-    setState(() {
-      press++;
-    });
-  }
+  // int press = 1;
+  //
+  // void pressed() {
+  //   setState(() {
+  //     press++;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        pressed();
+                        Navigator.of(context).pushNamed(
+                          '/',
+                          // arguments: 'Hello there from the first page!',
+                        );
                       },
                       child: Text(
                         "Login",
@@ -137,7 +140,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   width: double.infinity,
                   child: TextButton(
                     onPressed: () {
-                      pressed();
+                      // pressed();
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -193,7 +196,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 SizedBox(
                   height: 8.h,
                 ),
-                Text("Button is press: $press"),
+                // Text("Button is press: $press"),
               ],
             ),
           ),
@@ -241,12 +244,19 @@ class LoginScreen extends StatelessWidget {
                         color: kLightTextColor,
                       ),
                     ),
-                    Text(
-                      "Register",
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w700,
-                        color: kPurpleColor,
+                    InkWell(onTap: (){
+                      Navigator.of(context).pushNamed(
+                        '/register',
+                        arguments: 'Hello there from the first page!',
+                      );
+                    },
+                      child: Text(
+                        "Register",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w700,
+                          color: kPurpleColor,
+                        ),
                       ),
                     ),
                   ],
@@ -261,7 +271,39 @@ class LoginScreen extends StatelessWidget {
                 ),
                 getTextField(hint: "Password"),
                 SizedBox(
-                  height: 16.h,
+                  height: 4.h,
+                ),
+
+                Wrap(
+                  children: [
+                    Text(
+                      "Forget your password ",
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        color: kLightTextColor,
+                      ),
+                    ),
+                    InkWell(onTap: (){
+                      Navigator.of(context).pushNamed(
+                        '/forgetPassword',
+                        arguments: 'Hello there from the first page!',
+                      );
+                    },
+                      child: Text(
+                        "click here",
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w700,
+                          color: kPurpleColor,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                SizedBox(
+                  height: 10.h,
                 ),
 
                 SizedBox(
