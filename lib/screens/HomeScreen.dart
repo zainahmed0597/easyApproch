@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:maaz_class/models/constants.dart';
 import 'package:maaz_class/widgets/widgets.dart';
@@ -7,9 +6,12 @@ import 'package:maaz_class/widgets/widgets.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  get sp => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: kBorderColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -83,10 +85,89 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     textStyle: MaterialStateProperty.all(
-                      TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w700),
+                      TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              Row(
+                children: [
+                  const Expanded(child: Divider()),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                  Text(
+                    "or sign up via",
+                    style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
+                        color: kLightTextColor),
+                  ),
+                  SizedBox(
+                    width: 16.w,
+                  ),
+                  const Expanded(child: Divider()),
+                ],
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: () {},
+                  child: Row(mainAxisSize: MainAxisSize.min,
+                    children:  [
+                      Image.asset("assets/Google.png"),
+                      SizedBox(width: 10.w),
+                      const Text("Google"),
+                    ],
+                  ),
+                  style: ButtonStyle(
+                    side: MaterialStateProperty.all(
+                      const BorderSide(color: kBorderColor),
+                    ),
+                    foregroundColor: MaterialStateProperty.all(kDarkTextColor),
+                    padding: MaterialStateProperty.all(
+                      EdgeInsets.symmetric(
+                        vertical: 14.h,
+                      ),
+                    ),
+                    textStyle: MaterialStateProperty.all(
+                      TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.h,),
+              Wrap(
+                children: [
+                  Text(
+                    "By signing up to Masterminds you agree to our ",
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: kLightTextColor,
+                    ),
+                  ),
+                  Text(
+                    "terms and conditions",
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w700,
+                      color: kPurpleColor,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
